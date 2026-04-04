@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { WHATSAPP_NUMBER } from '@/lib/constants';
 import Icon from '@/components/ui/Icon';
 
@@ -60,8 +61,15 @@ export default function HeroSection() {
         </div>
 
         <div className="hero__right">
-          <div className="hero__image-box">
-            <Icon name="tool" size={120} className="hero__image-icon" />
+          <div className="hero-image-wrapper">
+            <Image
+              src="/images/hero-banner.webp"
+              alt="Servis elektroniky — notebooky, telefóny, tablety"
+              width={600}
+              height={400}
+              priority
+              className="hero-image"
+            />
           </div>
 
           <div className="hero__float-card hero__float-card--tl">

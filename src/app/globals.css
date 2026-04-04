@@ -491,24 +491,18 @@ img {
   animation: fadeInUp 0.8s 0.2s ease both;
 }
 
-.hero__image-box {
+.hero-image-wrapper {
   position: relative;
-  width: 380px;
-  height: 380px;
-  background: linear-gradient(135deg, var(--color-orange-bg-deep), var(--color-orange-bg));
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  box-shadow: var(--shadow-orange-lg);
+  width: 100%;
+  max-width: 550px;
+  z-index: 10;
 }
 
-.hero__image-icon {
-  width: 120px;
-  height: 120px;
-  color: var(--color-orange);
-  opacity: 0.6;
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 40px rgba(0,0,0,0.15));
 }
 
 .hero__float-card {
