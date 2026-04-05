@@ -5,6 +5,25 @@
   overflow: hidden;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: var(--color-orange);
+  opacity: 0.08;
+  clip-path: polygon(
+    80% 0%,
+    100% 0%,
+    100% 100%,
+    11% 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
 .bg {
   position: absolute;
   inset: 0;
@@ -148,30 +167,6 @@
   z-index: 1;
 }
 
-.imageWrapper::before {
-  content: '';
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  right: -12px;
-  bottom: -12px;
-  background: var(--color-orange);
-  border-radius: var(--radius);
-  z-index: -1;
-}
-
-.imageWrapper::after {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 60px;
-  height: 60px;
-  background: var(--color-orange);
-  opacity: 0.15;
-  border-radius: 50%;
-  z-index: -1;
-}
 
 .image {
   position: relative;
