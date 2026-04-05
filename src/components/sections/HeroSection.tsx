@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { WHATSAPP_NUMBER } from '@/lib/constants';
 import Icon from '@/components/ui/Icon';
+import HeroFloatBadges from '@/components/ui/HeroFloatBadges';
 import styles from './HeroSection.module.css';
 
 export default function HeroSection() {
@@ -73,25 +74,7 @@ export default function HeroSection() {
             />
           </div>
 
-          <div className={`${styles.floatCard} ${styles.floatCardTl}`}>
-            <div className={styles.floatCardIcon}>
-              <Icon name="check-circle" size={20} />
-            </div>
-            <div className={styles.floatCardText}>
-              <strong>Diagnostika zadarmo</strong>
-              <span>bez skrytých poplatkov</span>
-            </div>
-          </div>
-
-          <div className={`${styles.floatCard} ${styles.floatCardBr}`}>
-            <div className={styles.floatCardIcon}>
-              <Icon name="shield" size={20} />
-            </div>
-            <div className={styles.floatCardText}>
-              <strong>6 mesiacov záruka</strong>
-              <span>na každú opravu</span>
-            </div>
-          </div>
+          <HeroFloatBadges />
         </div>
       </div>
     </section>
