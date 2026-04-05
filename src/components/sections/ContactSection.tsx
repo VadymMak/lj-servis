@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { CONTACT_INFO } from '@/lib/constants';
 import Icon from '@/components/ui/Icon';
+import LeafletMap from '@/components/ui/LeafletMap';
 import styles from './ContactSection.module.css';
 
 interface FormState {
@@ -57,8 +58,12 @@ export default function ContactSection() {
               ))}
             </div>
             <div className={styles.map}>
-              <Icon name="map" size={32} />
-              &nbsp; Mapa — Trenčín
+              <LeafletMap
+                lat={48.8942}
+                lng={18.0442}
+                label="LJ Servis — oprava elektroniky"
+                height={220}
+              />
             </div>
           </div>
 
