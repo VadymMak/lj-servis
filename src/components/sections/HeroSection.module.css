@@ -179,13 +179,13 @@
 .floatCardTl {
   top: 12px;
   left: -10px;
-  animation: float 3s ease-in-out infinite;
+  animation: fadeInUp 0.6s 0.7s ease both, float 3s 1.4s ease-in-out infinite;
 }
 
 .floatCardBr {
   bottom: 12px;
   right: -10px;
-  animation: floatDelay 3.5s ease-in-out infinite;
+  animation: fadeInUp 0.6s 1.0s ease both, floatDelay 3.5s 1.7s ease-in-out infinite;
 }
 
 .floatCardIcon {
