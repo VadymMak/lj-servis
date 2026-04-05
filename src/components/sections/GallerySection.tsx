@@ -17,19 +17,14 @@ const galleryItems: GalleryItem[] = [
     caption: 'Čistenie notebooku',
   },
   {
-    src: '/images/gallery/oprava-notebooku-01.webp',
-    alt: 'Oprava notebooku — výmena klávesnice',
-    caption: 'Výmena klávesnice',
-  },
-  {
     src: '/images/gallery/termopasta-01.webp',
     alt: 'Výmena termopasty — CPU',
     caption: 'Výmena termopasty',
   },
   {
-    src: '/images/gallery/mikrospajkovanie-01.webp',
-    alt: 'Mikrospájkovanie — oprava plošného spoja',
-    caption: 'Mikrospájkovanie',
+    src: '/images/gallery/oprava-notebooku-01.webp',
+    alt: 'Oprava notebooku — výmena klávesnice',
+    caption: 'Výmena klávesnice',
   },
   {
     src: '/images/gallery/oprava-televizora-01.webp',
@@ -37,10 +32,33 @@ const galleryItems: GalleryItem[] = [
     caption: 'Oprava televízora',
   },
   {
+    src: '/images/gallery/mikrospajkovanie-01.webp',
+    alt: 'Mikrospájkovanie — oprava plošného spoja',
+    caption: 'Mikrospájkovanie',
+  },
+  {
     src: '/images/gallery/oprava-notebooku-02.webp',
     alt: 'Oprava notebooku — základná doska',
     caption: 'Základná doska',
   },
+];
+
+const itemPositionClasses = [
+  styles.item1,
+  styles.item2,
+  styles.item3,
+  styles.item4,
+  styles.item5,
+  styles.item6,
+];
+
+const itemSizes = [
+  '(max-width: 768px) 50vw, 33vw',
+  '(max-width: 768px) 50vw, 33vw',
+  '(max-width: 768px) 50vw, 33vw',
+  '(max-width: 768px) 100vw, 66vw',
+  '(max-width: 768px) 50vw, 33vw',
+  '(max-width: 768px) 50vw, 33vw',
 ];
 
 export default function GallerySection() {
@@ -82,7 +100,7 @@ export default function GallerySection() {
           {galleryItems.map((item, index) => (
             <div
               key={index}
-              className={styles.item}
+              className={`${styles.item} ${itemPositionClasses[index]}`}
               onClick={() => setActive(index)}
               role="button"
               tabIndex={0}
@@ -94,7 +112,7 @@ export default function GallerySection() {
                 alt={item.alt}
                 fill
                 style={{ objectFit: 'cover' }}
-                sizes="(max-width: 768px) 50vw, 33vw"
+                sizes={itemSizes[index]}
               />
               <div className={styles.caption}>{item.caption}</div>
             </div>
