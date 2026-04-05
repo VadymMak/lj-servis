@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main>
+      <main style={{ paddingTop: '72px' }}>
         <HeroSection />
         <TrustBar />
         <ServicesSection />
