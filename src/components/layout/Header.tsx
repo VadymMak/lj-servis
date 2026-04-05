@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { NAV_LINKS, PHONE_NUMBER } from '@/lib/constants';
+import styles from './Header.module.css';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -13,26 +14,26 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`header${scrolled ? ' header--scrolled' : ''}`}>
-      <div className="header__inner">
-        <a href="/" className="header__logo">
-          <div className="header__logo-mark">LJ</div>
-          <div className="header__logo-text">
-            <span className="header__logo-name">LJ Servis</span>
-            <span className="header__logo-tagline">oprava elektroniky</span>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+      <div className={styles.inner}>
+        <a href="/" className={styles.logo}>
+          <div className={styles.logoMark}>LJ</div>
+          <div className={styles.logoText}>
+            <span className={styles.logoName}>LJ Servis</span>
+            <span className={styles.logoTagline}>oprava elektroniky</span>
           </div>
         </a>
 
-        <nav className="header__nav">
+        <nav className={styles.nav}>
           {NAV_LINKS.map((link) => (
-            <a key={link.href} href={link.href} className="header__nav-link">
+            <a key={link.href} href={link.href} className={styles.navLink}>
               {link.label}
             </a>
           ))}
         </nav>
 
-        <div className="header__cta">
-          <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} className="header__phone">
+        <div className={styles.cta}>
+          <a href={`tel:${PHONE_NUMBER.replace(/\s/g, '')}`} className={styles.phone}>
             {PHONE_NUMBER}
           </a>
           <a href="#kontakt" className="btn btn--primary">

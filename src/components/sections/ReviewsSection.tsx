@@ -1,5 +1,6 @@
 import { REVIEWS } from '@/lib/constants';
 import Icon from '@/components/ui/Icon';
+import styles from './ReviewsSection.module.css';
 
 export default function ReviewsSection() {
   return (
@@ -13,27 +14,27 @@ export default function ReviewsSection() {
           </p>
         </div>
 
-        <div className="reviews__grid">
+        <div className={styles.grid}>
           {REVIEWS.map((review) => (
-            <div key={review.name} className="review-card">
-              <div className="review-card__stars">
+            <div key={review.name} className={styles.card}>
+              <div className={styles.stars}>
                 {Array.from({ length: review.stars }).map((_, i) => (
                   <Icon key={i} name="star" size={16} />
                 ))}
               </div>
-              <p className="review-card__text">&ldquo;{review.text}&rdquo;</p>
-              <div className="review-card__author">
-                <div className="review-card__avatar">{review.initials}</div>
+              <p className={styles.text}>&ldquo;{review.text}&rdquo;</p>
+              <div className={styles.author}>
+                <div className={styles.avatar}>{review.initials}</div>
                 <div>
-                  <div className="review-card__name">{review.name}</div>
-                  <div className="review-card__device">{review.device}</div>
+                  <div className={styles.authorName}>{review.name}</div>
+                  <div className={styles.authorDevice}>{review.device}</div>
                 </div>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="reviews__badge">
+        <div className={styles.badge}>
           <Icon name="star" size={16} />
           <span>
             Priemerné hodnotenie <strong>4.9 / 5</strong> na Google

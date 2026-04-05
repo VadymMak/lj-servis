@@ -1,34 +1,35 @@
 import Image from 'next/image';
 import { WHATSAPP_NUMBER } from '@/lib/constants';
 import Icon from '@/components/ui/Icon';
+import styles from './HeroSection.module.css';
 
 export default function HeroSection() {
   return (
-    <section className="hero">
-      <div className="hero__bg">
-        <div className="hero__bg-diagonal" />
-        <div className="hero__bg-dots" />
+    <section className={styles.hero}>
+      <div className={styles.bg}>
+        <div className={styles.bgDiagonal} />
+        <div className={styles.bgDots} />
       </div>
 
-      <div className="hero__content">
-        <div className="hero__left">
-          <div className="hero__badge">
-            <span className="hero__badge-dot" />
+      <div className={styles.content}>
+        <div className={styles.left}>
+          <div className={styles.badge}>
+            <span className={styles.badgeDot} />
             Trenčín &amp; okolie
           </div>
 
-          <h1 className="hero__title">
+          <h1 className={styles.title}>
             Oprava elektroniky{' '}
-            <span className="hero__title-accent">rýchlo</span> a{' '}
-            <span className="hero__title-accent">spoľahlivo</span>
+            <span className={styles.titleAccent}>rýchlo</span> a{' '}
+            <span className={styles.titleAccent}>spoľahlivo</span>
           </h1>
 
-          <p className="hero__description">
+          <p className={styles.description}>
             Profesionálny servis mobilných telefónov, notebookov, tabletov a ďalšej elektroniky.
             Diagnostika zadarmo. Záruka na každú opravu.
           </p>
 
-          <div className="hero__actions">
+          <div className={styles.actions}>
             <a href="#kontakt" className="btn btn--primary">
               Objednať opravu
               <Icon name="arrow-right" size={16} />
@@ -44,49 +45,49 @@ export default function HeroSection() {
             </a>
           </div>
 
-          <div className="hero__features">
-            <div className="hero__feature">
-              <Icon name="check" size={16} className="hero__feature-icon" />
+          <div className={styles.features}>
+            <div className={styles.feature}>
+              <Icon name="check" size={16} className={styles.featureIcon} />
               Diagnostika zadarmo
             </div>
-            <div className="hero__feature">
-              <Icon name="check" size={16} className="hero__feature-icon" />
+            <div className={styles.feature}>
+              <Icon name="check" size={16} className={styles.featureIcon} />
               6-mesačná záruka
             </div>
-            <div className="hero__feature">
-              <Icon name="check" size={16} className="hero__feature-icon" />
+            <div className={styles.feature}>
+              <Icon name="check" size={16} className={styles.featureIcon} />
               Férové ceny
             </div>
           </div>
         </div>
 
-        <div className="hero__right">
-          <div className="hero-image-wrapper">
+        <div className={styles.right}>
+          <div className={styles.imageWrapper}>
             <Image
               src="/images/hero-banner.webp"
               alt="Servis elektroniky — notebooky, telefóny, tablety"
               width={600}
               height={400}
               priority
-              className="hero-image"
+              className={styles.image}
             />
           </div>
 
-          <div className="hero__float-card hero__float-card--tl">
-            <div className="hero__float-card-icon">
+          <div className={`${styles.floatCard} ${styles.floatCardTl}`}>
+            <div className={styles.floatCardIcon}>
               <Icon name="check-circle" size={20} />
             </div>
-            <div className="hero__float-card-text">
+            <div className={styles.floatCardText}>
               <strong>Diagnostika zadarmo</strong>
               <span>bez skrytých poplatkov</span>
             </div>
           </div>
 
-          <div className="hero__float-card hero__float-card--br">
-            <div className="hero__float-card-icon">
+          <div className={`${styles.floatCard} ${styles.floatCardBr}`}>
+            <div className={styles.floatCardIcon}>
               <Icon name="shield" size={20} />
             </div>
-            <div className="hero__float-card-text">
+            <div className={styles.floatCardText}>
               <strong>6 mesiacov záruka</strong>
               <span>na každú opravu</span>
             </div>

@@ -1,0 +1,91 @@
+.services {
+  padding-top: 6rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-150);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--color-orange);
+  transform: scaleX(0);
+  transition: transform var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-gray-200);
+}
+
+.card:hover::after {
+  transform: scaleX(1);
+}
+
+.cardIcon {
+  width: 52px;
+  height: 52px;
+  background: var(--color-orange-bg);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-orange);
+  margin-bottom: 1.25rem;
+  transition: background var(--transition);
+}
+
+.card:hover .cardIcon {
+  background: var(--color-orange-bg-deep);
+}
+
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+  margin-bottom: 0.5rem;
+}
+
+.cardDesc {
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.cardPrice {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-orange);
+  background: var(--color-orange-bg);
+  display: inline-block;
+  padding: 0.3rem 0.75rem;
+  border-radius: 50px;
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+}

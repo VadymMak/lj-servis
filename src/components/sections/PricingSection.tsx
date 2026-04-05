@@ -1,5 +1,6 @@
 import { PRICE_CATEGORIES } from '@/lib/constants';
 import Icon from '@/components/ui/Icon';
+import styles from './PricingSection.module.css';
 
 export default function PricingSection() {
   return (
@@ -13,29 +14,29 @@ export default function PricingSection() {
           </p>
         </div>
 
-        <div className="pricing__grid">
+        <div className={styles.grid}>
           {PRICE_CATEGORIES.map((cat) => (
-            <div key={cat.category} className="price-card">
-              <div className="price-card__header">
-                <div className="price-card__header-icon">
+            <div key={cat.category} className={styles.card}>
+              <div className={styles.cardHeader}>
+                <div className={styles.cardHeaderIcon}>
                   <Icon name={cat.icon} size={20} />
                 </div>
-                <h3 className="price-card__category">{cat.category}</h3>
+                <h3 className={styles.cardCategory}>{cat.category}</h3>
               </div>
-              <div className="price-card__body">
+              <div className={styles.cardBody}>
                 {cat.items.map((item) => (
-                  <div key={item.service} className="price-row">
-                    <span className="price-row__service">{item.service}</span>
-                    <span className="price-row__cost">{item.cost}</span>
+                  <div key={item.service} className={styles.row}>
+                    <span className={styles.rowService}>{item.service}</span>
+                    <span className={styles.rowCost}>{item.cost}</span>
                   </div>
                 ))}
               </div>
-              <div className="price-card__note">{cat.note}</div>
+              <div className={styles.cardNote}>{cat.note}</div>
             </div>
           ))}
         </div>
 
-        <p className="pricing__note">
+        <p className={styles.note}>
           Diagnostika je vždy <strong>zadarmo</strong>. Platíte až po schválení opravy.
         </p>
       </div>

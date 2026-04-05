@@ -1,4 +1,5 @@
 import { WHY_US_ITEMS } from '@/lib/constants';
+import styles from './WhyUsSection.module.css';
 
 export default function WhyUsSection() {
   return (
@@ -12,12 +13,12 @@ export default function WhyUsSection() {
           </p>
         </div>
 
-        <div className="why-us__grid">
+        <div className={styles.grid}>
           {WHY_US_ITEMS.map((item) => (
-            <div key={item.num} className="why-item">
-              <div className="why-item__num">{item.num}</div>
-              <h3 className="why-item__title">{item.title}</h3>
-              <p className="why-item__desc">{item.description}</p>
+            <div key={item.num} className={styles.item}>
+              <div className={styles.itemNum}>{item.num}</div>
+              <h3 className={styles.itemTitle}>{item.title}</h3>
+              <p className={styles.itemDesc}>{item.description}</p>
             </div>
           ))}
         </div>

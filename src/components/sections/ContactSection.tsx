@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { CONTACT_INFO } from '@/lib/constants';
 import Icon from '@/components/ui/Icon';
+import styles from './ContactSection.module.css';
 
 interface FormState {
   name: string;
@@ -39,62 +40,62 @@ export default function ContactSection() {
           </p>
         </div>
 
-        <div className="contact__grid">
+        <div className={styles.grid}>
           <div>
-            <h3 className="contact__info-title">Kde nás nájdete</h3>
-            <div className="contact__info-list">
+            <h3 className={styles.infoTitle}>Kde nás nájdete</h3>
+            <div className={styles.infoList}>
               {CONTACT_INFO.map((item) => (
-                <div key={item.label} className="contact-info-item">
-                  <div className="contact-info-item__icon">
+                <div key={item.label} className={styles.infoItem}>
+                  <div className={styles.infoItemIcon}>
                     <Icon name={item.icon} size={18} />
                   </div>
                   <div>
-                    <div className="contact-info-item__label">{item.label}</div>
-                    <div className="contact-info-item__value">{item.value}</div>
+                    <div className={styles.infoItemLabel}>{item.label}</div>
+                    <div className={styles.infoItemValue}>{item.value}</div>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="contact__map">
+            <div className={styles.map}>
               <Icon name="map" size={32} />
               &nbsp; Mapa — Trenčín
             </div>
           </div>
 
-          <div className="contact__form-card">
+          <div className={styles.formCard}>
             {submitted ? (
-              <div className="form-success">
-                <div className="form-success__icon">
+              <div className={styles.success}>
+                <div className={styles.successIcon}>
                   <Icon name="check" size={28} />
                 </div>
-                <h3 className="form-success__title">Správa odoslaná!</h3>
+                <h3 className={styles.successTitle}>Správa odoslaná!</h3>
                 <p>Ozveme sa vám čo najskôr. Ďakujeme za záujem.</p>
               </div>
             ) : (
               <>
-                <h3 className="contact__form-title">Napíšte nám</h3>
+                <h3 className={styles.formTitle}>Napíšte nám</h3>
                 <form onSubmit={handleSubmit}>
-                  <div className="form-row">
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="name">Meno</label>
+                  <div className={styles.formRow}>
+                    <div className={styles.formGroup}>
+                      <label className={styles.formLabel} htmlFor="name">Meno</label>
                       <input
                         id="name"
                         name="name"
                         type="text"
-                        className="form-input"
+                        className={styles.formInput}
                         placeholder="Vaše meno"
                         value={form.name}
                         onChange={handleChange}
                         required
                       />
                     </div>
-                    <div className="form-group">
-                      <label className="form-label" htmlFor="phone">Telefón</label>
+                    <div className={styles.formGroup}>
+                      <label className={styles.formLabel} htmlFor="phone">Telefón</label>
                       <input
                         id="phone"
                         name="phone"
                         type="tel"
-                        className="form-input"
+                        className={styles.formInput}
                         placeholder="+421 900 000 000"
                         value={form.phone}
                         onChange={handleChange}
@@ -102,31 +103,31 @@ export default function ContactSection() {
                       />
                     </div>
                   </div>
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="device">Zariadenie</label>
+                  <div className={styles.formGroup}>
+                    <label className={styles.formLabel} htmlFor="device">Zariadenie</label>
                     <input
                       id="device"
                       name="device"
                       type="text"
-                      className="form-input"
+                      className={styles.formInput}
                       placeholder="napr. iPhone 13, ASUS notebook..."
                       value={form.device}
                       onChange={handleChange}
                     />
                   </div>
-                  <div className="form-group">
-                    <label className="form-label" htmlFor="message">Popis problému</label>
+                  <div className={styles.formGroup}>
+                    <label className={styles.formLabel} htmlFor="message">Popis problému</label>
                     <textarea
                       id="message"
                       name="message"
-                      className="form-textarea"
+                      className={styles.formTextarea}
                       placeholder="Opíšte závadu alebo čo potrebujete opraviť..."
                       value={form.message}
                       onChange={handleChange}
                       required
                     />
                   </div>
-                  <button type="submit" className="form-submit" disabled={loading}>
+                  <button type="submit" className={styles.formSubmit} disabled={loading}>
                     {loading ? 'Odosielam...' : 'Odoslať správu'}
                   </button>
                 </form>

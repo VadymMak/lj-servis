@@ -1,19 +1,20 @@
 import { TRUST_ITEMS } from '@/lib/constants';
 import Icon from '@/components/ui/Icon';
+import styles from './TrustBar.module.css';
 
 export default function TrustBar() {
   return (
-    <div className="trust-bar">
-      <div className="trust-bar__inner">
-        <div className="trust-bar__grid">
+    <div className={styles.bar}>
+      <div className={styles.inner}>
+        <div className={styles.grid}>
           {TRUST_ITEMS.map((item) => (
-            <div key={item.label} className="trust-item">
-              <div className="trust-item__icon">
+            <div key={item.label} className={styles.item}>
+              <div className={styles.itemIcon}>
                 <Icon name={item.icon} size={22} />
               </div>
               <div>
-                <div className="trust-item__number">{item.number}</div>
-                <div className="trust-item__label">{item.label}</div>
+                <div className={styles.itemNumber}>{item.number}</div>
+                <div className={styles.itemLabel}>{item.label}</div>
               </div>
             </div>
           ))}

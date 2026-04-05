@@ -1,5 +1,6 @@
 import { GALLERY_ITEMS } from '@/lib/constants';
 import Icon from '@/components/ui/Icon';
+import styles from './GallerySection.module.css';
 
 export default function GallerySection() {
   return (
@@ -13,14 +14,14 @@ export default function GallerySection() {
           </p>
         </div>
 
-        <div className="gallery__grid">
+        <div className={styles.grid}>
           {GALLERY_ITEMS.map((item, index) => (
             <div
               key={index}
-              className={`gallery-item${item.large ? ' gallery-item--large' : ''}`}
+              className={`${styles.item}${item.large ? ` ${styles.itemLarge}` : ''}`}
             >
-              <Icon name="image" size={60} className="gallery-item__placeholder" />
-              <div className="gallery-item__label">{item.label}</div>
+              <Icon name="image" size={60} className={styles.itemPlaceholder} />
+              <div className={styles.itemLabel}>{item.label}</div>
             </div>
           ))}
         </div>
